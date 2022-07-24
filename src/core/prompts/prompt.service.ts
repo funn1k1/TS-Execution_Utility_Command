@@ -1,4 +1,3 @@
-
 import inquirer from 'inquirer';
 import { PromptType } from './prompt.types';
 export class PromptService {
