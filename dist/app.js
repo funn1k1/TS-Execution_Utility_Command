@@ -10,13 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
-const prompt_service_1 = require("./core/prompts/prompt.service");
+const ffmpeg_executor_1 = require("./commands/ffmpeg/ffmpeg.executor");
+const console_logger_1 = require("./out/console-logger/console-logger");
 class App {
     run() {
         return __awaiter(this, void 0, void 0, function* () {
-            const prompt = new prompt_service_1.PromptService();
-            const res = yield prompt.input('Number', 'number');
-            console.log(res);
+            const ffmpeg = new ffmpeg_executor_1.FfmpegExecutor(console_logger_1.ConsoleLogger.getLogger());
+            ffmpeg.execute();
         });
     }
 }

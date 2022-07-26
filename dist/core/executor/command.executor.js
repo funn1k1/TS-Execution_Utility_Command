@@ -21,6 +21,7 @@ class CommandExecutor {
             const command = this.build(input);
             const stream = this.spawn(command);
             this.processStream(stream, this.logger);
+            // this.deleteInputFile(command.inputPath);
         });
     }
 }

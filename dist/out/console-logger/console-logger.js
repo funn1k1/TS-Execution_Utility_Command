@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ConsoleLogger = void 0;
 class ConsoleLogger {
     constructor() { }
-    static getInstance() {
+    static getLogger() {
         if (!ConsoleLogger.logger) {
             ConsoleLogger.logger = new ConsoleLogger();
         }

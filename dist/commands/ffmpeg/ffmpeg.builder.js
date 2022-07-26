@@ -9,6 +9,7 @@ class FfmpegBuilder {
         this.options.set('-i', inputPath);
         return this;
     }
+    // default value = libx264
     setCodec(codec = 'libx264') {
         this.options.set('-c:v', codec);
         return this;
@@ -27,16 +28,10 @@ class FfmpegBuilder {
         }
         const res = [];
         this.options.forEach((value, key) => {
-            res.push(`${key} ${value}`);
+            res.push(key, value);
         });
         res.push(this.outputPath);
         return res;
     }
 }
 exports.FfmpegBuilder = FfmpegBuilder;
-console.log(new FfmpegBuilder()
-    .setInput('C:\\Users\\yukov\\Videos\\Desktop\\source.mp4')
-    .setCodec()
-    .setVideoSize(1024, 768)
-    .setOutput('C:\\Users\\yukov\\OneDrive\\Desktop\\TS-Execution_Utility_Command\\res.avi')
-    .build());
